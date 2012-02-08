@@ -26,8 +26,10 @@
 
     // Smarty settings
     $s->template_dir = SMARTY_TEMPLATE_DIR;
-    $s->compile_dir  = SMARTY_COMPILED_DIR;
-    $s->cache_dir    = SMARTY_CACHE_DIR;
+    //$s->compile_dir  = SMARTY_COMPILED_DIR;
+    //$s->cache_dir    = SMARTY_CACHE_DIR;
+    $s->compile_dir  = $_SERVER["TMPDIR"];
+    $s->cache_dir    = $_SERVER["TMPDIR"];
     $s->config_dir   = SMARTY_CONFIG_DIR;
     // GetText for smarty
     $s->register_block('t', 'smarty_translate');
