@@ -1,0 +1,59 @@
+@import "compass/css3";
+@import "compass/typography/text/replacement";
+
+
+$page-width:800px;
+
+$blueprint-grid-columns: 24;
+$blueprint-container-size: $page-width;
+$blueprint-grid-margin: 5px;
+$blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $blueprint-grid-columns - $blueprint-grid-margin;
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint";
+// Import the non-default scaffolding module.
+@import "blueprint/scaffolding";
+
+
+$bg-opacity:0.5;
+
+$base-light-radius:6px;
+$base-hard-radius:40px;
+
+$base-button-radius:18px;
+$base-button-border-width:0;
+
+$base-link-color:#678FB2;
+$base-block-bg:#fff;
+
+$base-border-color:#ddd;
+$base-border-width:1px;
+
+
+@mixin bg-gradient-v($colorStart, $colorEnd, $opacityStart:1, $opacityEnd:1) {
+	
+    background: $colorStart;
+    background: -moz-linear-gradient(top, rgba($colorStart,$opacityStart) 0%, rgba($colorEnd,$opacityEnd) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba($colorStart,$opacityStart)), color-stop(100%,rgba($colorEnd,$opacityEnd)));
+    background: -webkit-linear-gradient(top, rgba($colorStart,$opacityStart) 0%,rgba($colorEnd,$opacityEnd) 100%);
+    background: -o-linear-gradient(top, rgba($colorStart,$opacityStart) 0%,rgba($colorEnd,$opacityEnd) 100%);
+    background: -ms-linear-gradient(top, rgba($colorStart,$opacityStart) 0%,rgba($colorEnd,$opacityEnd) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorStart', endColorstr='$colorEnd',GradientType=0 );
+    background: linear-gradient(top, rgba($colorStart,$opacityStart) 0%,rgba($colorEnd,$opacityEnd) 100%);
+}
+
+@mixin bg-gradient-h($colorStart, $colorEnd, $opacityStart:1, $opacityEnd:1) {
+	
+	background: $colorStart;
+    background: -moz-linear-gradient(left, rgba($colorStart,$opacityStart) 0%, rgba($colorEnd,$opacityEnd) 100%);
+ 	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba($colorStart,$opacityStart)), color-stop(100%,rgba($colorEnd,$opacityEnd)));
+	background: -webkit-linear-gradient(left, rgba($colorStart,$opacityStart) 0%,rgba($colorEnd,$opacityEnd) 100%);
+	background: -o-linear-gradient(left, rgba($colorStart,$opacityStart) 0%,rgba($colorEnd,$opacityEnd) 100%);	
+	background: -ms-linear-gradient(left, rgba($colorStart,$opacityStart) 0%,rgba($colorEnd,$opacityEnd) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorStart', endColorstr='$colorEnd',GradientType=1 );
+    background: linear-gradient(left, rgba($colorStart,$opacityStart) 0%,rgba($colorEnd,$opacityEnd) 100%);	
+
+}
+
+@mixin bg-gradient($colorStart, $colorEnd, $opacityStart:1, $opacityEnd:1) {
+	@include bg-gradient-v($colorStart, $colorEnd, $opacityStart, $opacityEnd);
+}

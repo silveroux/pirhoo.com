@@ -1,0 +1,398 @@
+@import "base";
+
+body {	
+	background:url("../image/paper.jpg");
+}
+
+menu {
+
+	position:fixed;
+	z-index:60;
+	top:0; left:0;
+
+	width:200px;	
+	padding-left:10px;
+	float:left;	
+	
+	font-family:'Terminal Dosis', arial,sans-serif;
+	background:url("../image/paper.jpg");
+	
+	border-right:1px solid white;
+	@include text-shadow(0 0 1px white);
+
+	h2 {
+		font-size:14px;		
+		color:black;
+
+		margin:0;
+		padding:5px 15px;	
+		font-weight:bold;
+
+		a { 
+			color:inherit;
+			
+			display:block;
+
+			@include transition(0.4s);			
+			
+			&.icon:after {
+				position:absolute;
+				top:9px;				
+				left:-40px;
+				right:auto;
+
+				background-position:-19*24px -3*24px;
+				display:block;
+
+				@include transition(0.4s);
+			}
+
+			&.active {
+
+				&.icon:after {			
+					left:-20px;
+				}
+			}
+		}
+
+	}
+
+	ul {
+				
+		li {		
+			position:relative;
+			margin-left:-10px;
+					
+			a {
+				display:block;
+				padding:5px 25px;			
+				color:#666;
+				cursor:pointer;	
+				
+				@include transition(0.4s);		
+
+				&:hover {
+					background:rgba(white,0.7);
+					color:black;
+				}	
+
+				&.selected {				
+					color:black;
+					background:rgba(white,0.7);
+				}
+			}	
+			
+			&.icon:after {
+				position:absolute;
+				top:6px;
+				right:2px;
+			}
+
+		}
+		
+	}
+}
+
+.share {
+	
+	position:absolute;
+	bottom:0;
+	left:0;
+
+	padding:10px;
+	@include opacity(0.7);
+	@include transition(0.4s);
+
+	&:hover { 
+		@include opacity(1);		
+	}
+
+	.twitter-share-button {
+		margin:10px auto 8px;
+	}	
+}
+
+#contact {
+	z-index:400;
+
+	position:fixed;
+	top:10px;
+	right:10px;
+
+	padding:5px;	
+	border:1px solid #eee;	
+
+	color:#666;
+	font-weight:bold;
+	font-size:12px;
+
+	@include border-radius(3px);
+	@include text-shadow(0px 1px 0 #fff);
+
+	&:after {
+		background-position:-13*24px -5*24px;
+		display:block;
+		top:5px;
+		@include opacity(0.5);
+	}
+
+	a { 
+		color:#888;		
+		padding-right:25px;
+	}
+
+	&:hover {
+		border:1px solid #aaa;
+		@include box-shadow(0px 3px 5px 0 rgba(#000, 0.1) );			
+		@include bg-gradient(#fff, #eee);
+
+		&:after {
+			background-position:-12*24px -5*24px;
+		}
+
+		ul {
+			margin:5px;
+			margin-bottom:0;
+
+			max-height:200px;
+			max-width:200px;
+
+			@include opacity(1);	
+			font-weight:normal;	
+			
+			a { padding:0; }		
+		}
+	}
+
+	ul {
+
+		max-height:0;
+		max-width:0;
+
+		overflow:hidden;			
+		margin:0px;
+
+		border-top:1px solid #eee;
+		@include box-shadow(0 -1px 0 0 #fff);					
+		@include opacity(0);		
+		@include transition(0.4s);
+
+		li {
+			padding:3px 0;
+			text-align:right;
+		}
+	}
+
+
+}
+
+#content {	
+
+	$thumbnailWidth:150px;
+
+	@include box-shadow(-5px 0px 10px 0 rgba(#000, 0.1) );	
+	margin-left:210px;
+
+	position:relative;
+	z-index:80;
+
+	background:rgba(#fff, 0.4);
+
+	#me {
+		padding-bottom:100px;
+		padding-top:100px;
+	}
+
+	.screen {		
+		overflow:hidden;
+		width:100%;
+
+		padding-top:40px;
+		padding-bottom:20px;
+
+		border-bottom:1px solid #eee;
+		min-height:100%;
+
+		position:relative;
+
+		@include box-shadow(0px -5px 10px 0 rgba(#000, 0.1) );	
+
+		h1 {
+			padding:10px 20px;				
+			display:block;
+			width:100%;
+			
+			color:#777;
+			font-size:18px;
+			@include text-shadow(1px 1px 0 #fff);
+
+			position:absolute;
+			z-index:300;
+			top:0;
+			left:0;
+
+			@include opacity(0.8);
+
+			.arrow {
+				padding:0 5px;
+			}
+		}
+		
+		&.active h1 {			
+			position:fixed;			
+			left:210px;
+			background:rgba(#fafafa,0.8) !important;
+			background:white;
+			
+			@include opacity(1);
+			@include box-shadow(0 0 5px 0 rgba(#000, 0.1) );				
+		}		
+
+		.desc {			
+			margin-left:60px;
+			font-size:14px;
+			color:#777;
+		}
+			
+		h2 {
+			font-size:20px;
+			padding:20px 0px 0;			
+			margin:0;
+			margin-left:60px;
+		}
+
+		.before {
+			position:relative;
+			@include opacity(0.6);
+
+			.csstransforms &:before {
+				content:"avant";
+				
+				background:rgba(black, 0.7);
+				color:white;
+				font-size:12px;
+				line-height:13px;
+				height:15px;
+
+				display:block;
+				padding:0px 4px;
+
+				position:absolute;
+				top:40px;
+				left:30px;
+				
+				@include transform( rotate(-90deg) );					
+			}
+		}
+	}
+
+	.cascade {
+		margin:auto;
+	}
+
+	.vignette {
+		
+		display:block;
+		float:left;
+		
+		padding:30px;
+		padding-bottom:10px;
+		
+		width:$thumbnailWidth;		
+		
+		@include transform(scale(1));
+		@include transition(0.4s);
+
+		.csstransforms &.hidden {
+			@include transform(scale(0));
+		}
+		
+		.no-csstransforms &.hidden {
+			display:none;
+		}
+
+
+		&:hover .icon {
+			@include opacity(1);
+		}
+
+		.preview {
+
+			position:relative;	
+			overflow:hidden;
+
+			width:100%;	
+			display:block;	
+			@include box-shadow(0 2px 5px rgba(#000, 0.6) );
+
+			img {
+				width:100%;
+				display:block;
+				@include transition(0s);				
+			}
+
+			&::after {
+				position:absolute;
+				top:0; left:0;
+
+				width:100%;
+				height:100%;
+
+				content:"";
+				display:block;
+
+				@include box-shadow(0 0 60px rgba(#000, 0.4) inset );
+				@include opacity(1);
+				@include transition(0.4s);
+			}
+
+			&:hover::after{
+				@include opacity(0);
+			}
+
+			.csstransitions &:hover img {
+				@include transform( scale(1.5) );
+				@include transition(20s);
+			}
+
+		}
+
+		.title {		
+		
+			position:relative;
+				
+			margin-top:10px;			
+			display:block;
+
+			color:black;
+			font-family:'Terminal Dosis', arial,sans-serif;
+			font-size:13px;
+				
+			.icon {			
+
+				position:absolute;
+				top:-32px;
+				right:2px;			
+
+				display:block;
+				width:20px;
+				height:20px;
+
+				background:rgba(#fff,0.9);
+
+				@include transition(0.4s);
+				@include opacity(0.4);
+				@include border-radius(2px);
+
+				&:after {					
+					right:-7px;
+					top:3px;
+				}
+			}
+		}
+
+		&:hover .icon {
+			@include opacity(0.9);			
+		}
+	}
+}
