@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} !^pirhoo\.com$ [NC]
+RewriteRule ^(.*)$ http://www.pirhoo.com/$1 [R=301,L]
