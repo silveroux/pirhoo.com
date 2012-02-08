@@ -16,13 +16,13 @@
     define("SMARTY_CONFIG_DIR",   CONFIG_DIR."/smarty/");
     
     define("SITE_URL",   "http://".$_SERVER["SERVER_NAME"].str_replace("index.php", "", $_SERVER["SCRIPT_NAME"]) );
-    define("SHARE_URL",  "http://pirhoo.com");
-    define("GA_PROFILE", "UA-");    
+    define("SHARE_URL",  "http://www.pirhoo.com");    
 
     // list of every screen
     $arrScreen = Array(
         "404" => CORE_DIR."/screen/inc.homepage.php",
-        "homepage" => CORE_DIR."/screen/inc.homepage.php"
+        "homepage" => CORE_DIR."/screen/inc.homepage.php",
+        "feed" => CORE_DIR."/screen/inc.feed.php"
     );
     
 ?>

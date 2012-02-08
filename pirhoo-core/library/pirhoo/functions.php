@@ -1,9 +1,14 @@
 <?php
 
+	function is_cctrl() {
+		return !strstr($_SERVER['SERVER_NAME'],'pirhoo.dev');
+	}
+
 	function get_all_posts() {
 		
 		$postsFile = CORE_DIR."/cache/posts.json";
-            
+		if( is_cctrl() ) $postsFile = $_SERVER["TMPDIR"]."/posts.json";
+		            
 	    // if the file doesn't exist or is too old (7 days)
 	    if(!file_exists($postsFile)  ||  time() - filemtime($postsFile) > 60*60*24*7) {
 	        // get posts        
