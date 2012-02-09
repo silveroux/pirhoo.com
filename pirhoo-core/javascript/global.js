@@ -31,7 +31,7 @@
 
         });   
 
-        // Smooth scrolling for internal links
+        // Smooth scrolling for internal links and only
         $("a[href^='#']").live("click", function(event) {
             event.preventDefault();
             
@@ -42,7 +42,7 @@
             
             $(scrollElement).stop().animate({
                 'scrollTop': $target.offset().top
-            }, 500, 'swing', function() {
+            }, 500, 'linear', function() {
                 window.location.hash = target;
             });
             
@@ -79,7 +79,7 @@
 
         event.preventDefault();
 
-        $(".filters a").removeClass("selected");
+        site.el.$filters.find("a").removeClass("selected");
         $(this).addClass("selected");
 
         var target = $(this).attr("href").replace("#", "");
@@ -87,15 +87,15 @@
         // if we wanna show every vignette
         if(target == "all") {
             // show every vignette
-            $("#works .vignette").removeClass("hidden");
+            site.el.$vignette.removeClass("hidden");
             // update the layout of every vignette
-            $('#works').masonry("reload");
+            site.el.$works.masonry("reload");
             // stops here
             return;
         }
 
         // tests every vignette
-        $("#works .vignette").each(function(i, vignette) {
+        site.el.$vignette.each(function(i, vignette) {
 
             var $vignette = $(vignette);
 
@@ -107,7 +107,7 @@
         });
 
         // update the layout of every vignette
-        $('#works').masonry("reload");
+        site.el.$works.masonry("reload");
 
     }
 
@@ -119,7 +119,16 @@
      * @function
      * @public
      */
-    $(window).load(site.ready = function() {		
+    $(window).load(site.ready = function() {	
+    
+        site.el = {
+            $content  : $("#content"),
+            $cascade  : $(".cascade"),
+            $works    : $("#works"),
+            $vignette : $("#works .vignette"),
+            $filters  : $(".filters")
+        };
+        
 
         // changes the min height of a few blocks
         site.resizeBlocks();
@@ -127,22 +136,22 @@
         $(window).resize(site.resizeBlocks);
 
         // initializes masonry to define the layout of each vignette
-        $('.cascade').masonry({
+        site.el.$cascade.masonry({
             // options
             itemSelector : '.vignette:not(.hidden)',            
-            //isFitWidth: true,
-            isAnimated: false // except with css transition
+             // except with css transition
+            isAnimated: false
         });
 
         // the user wanna filter the list
-        $(".filters li a").click(site.filterList);
+        site.el.$filters.find("li a").click(site.filterList);
 
         $("menu h2 a").click(function() {            
             $("menu h2 a").removeClass("active").filter(this).addClass("active"); 
         });
 
         // The same for all waypoints
-        $('#content').delegate('.screen', 'waypoint.reached', function(event, direction) {         
+        site.el.$content.delegate('.screen', 'waypoint.reached', function(event, direction) {         
 
             var $this = $(this);
             // if we are going up, selects the previous screen
@@ -155,14 +164,20 @@
             // update the menu  
             $("menu h2 a").removeClass("active").filter("[href='#" + $this.attr("id") + "']").addClass("active"); 
             // update the screen
-            $('#content .screen').removeClass("active");
+            site.el.$content.find('.screen').removeClass("active");
             $this.addClass("active");
             // update the window url
             if(Modernizr.history) window.history.pushState('home', '', "#" + $this.attr("id") );
         });
         
         // Register each screen as a waypoint.
-        $('#content .screen').waypoint({ offset: '0%', continuous: false });
+        site.el.$content.find('.screen').waypoint({ offset: '0%', continuous: false });
+
+        // Scroll to the right element
+        if(window.location.hash != "") {            
+            $("html,body").scrollTop( $(window.location.hash).offset().top + 1 );
+        }
+            
 
     });
 

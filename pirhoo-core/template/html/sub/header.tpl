@@ -29,6 +29,8 @@
 		<meta property="og:site_name" content="Pierre Romera (Pirhoo)" />
 		<meta property="fb:admins" content="686299757" />
 
+        <link rel="alternate" type="application/rss+xml" title="Pierre Romera (Pirhoo) : Flux" href="{$smarty.const.SITE_URL}?screen=feed"/>
+
     </head>
 
     <body onload="window.scrollTo(0, 1)">

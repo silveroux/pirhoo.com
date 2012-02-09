@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2012-02-07 00:08:37
+<?php /* Smarty version Smarty-3.0.8, created on 2012-02-09 15:32:46
          compiled from "/Users/pirhoo/Lab/Web/Personal/Pirhoo.v2/pirhoo-core/template/html/sub/header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:7277336314f305d75cf8a29-34471012%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:12010812844f33d90eb210b2-75175058%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e9483400f4f41eda059414056c72a95ca239a77f' => 
     array (
       0 => '/Users/pirhoo/Lab/Web/Personal/Pirhoo.v2/pirhoo-core/template/html/sub/header.tpl',
-      1 => 1328569714,
+      1 => 1328797945,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '7277336314f305d75cf8a29-34471012',
+  'nocache_hash' => '12010812844f33d90eb210b2-75175058',
   'function' => 
   array (
   ),
@@ -51,6 +51,9 @@ $_template->assign('type','css');$_template->assign('list',$_smarty_tpl->getVari
 /pirhoo-core/image/penguin_nb.jpg" />
 		<meta property="og:site_name" content="Pierre Romera (Pirhoo)" />
 		<meta property="fb:admins" content="686299757" />
+
+        <link rel="alternate" type="application/rss+xml" title="Pierre Romera (Pirhoo) : Flux" href="<?php echo @SITE_URL;?>
+?screen=feed"/>
 
     </head>
 

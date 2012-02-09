@@ -327,7 +327,8 @@ menu {
 
 			img {
 				width:100%;
-				display:block;
+				display:block;				
+
 				@include transition(0s);				
 			}
 
@@ -351,8 +352,8 @@ menu {
 			}
 
 			.csstransitions &:hover img {
-				@include transform( scale(1.5) );
-				@include transition(20s);
+				@include transform( scale(1.5) );				
+				@include transition(30s);
 			}
 
 		}
