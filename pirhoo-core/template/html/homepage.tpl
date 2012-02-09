@@ -60,7 +60,7 @@
 		            {if $post.type != "article" && $image != ""}
 		                <li class="vignette {$post.type}" data-type="{$post.type}">
 		                    <a href="{$permalink}" class="preview open-window">                    
-		                        <img src="./pirhoo-core/library/timthumb.php?src={$image}&w=150" alt="">
+		                        <img src="./pirhoo-core/library/timthumb.php?src={$image}&w=150" width="150" alt="">
 			                    </a>	                    
 		                    <a href="{$permalink}" class="open-window title">
 		                    	<span class="icon {$post.type}"></span>
@@ -109,8 +109,8 @@
 		            {if $post.type == "article" && $image != ""}
 		                <li class="vignette {$post.type}" data-type="{$post.type}">
 		                    <a href="{$permalink}" class="preview open-window">                    
-		                        <img src="{$image}" alt="">
-			                    </a>	                    
+		                        <img src="./pirhoo-core/library/timthumb.php?src={$image}&w=150" width="150" alt="">
+			                </a>	                    
 		                    <a href="{$permalink}" class="open-window title">
 		                    	<span class="icon {$post.type}"></span>
 		                    	{$post.title}
