@@ -8,4 +8,5 @@ RewriteCond %{HTTP_HOST} ^pirhoo.cloudcontrolled.com
 RewriteRule ^(.*)$ http://www.pirhoo.com/$1 [R=301,L]
 
 RewriteEngine on
-RewriteCond %{HTTP_HOST} ^www.pirhoo.com
+RewriteCond %{HTTP_HOST} ^pirhoo.com
+RewriteRule ^(.*)$ http://www.pirhoo.com/$1 [R=301,L]
