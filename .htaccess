@@ -1,5 +1,11 @@
-RewriteEngine On
-RewriteBase /
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^pirhoo.com
+RewriteCond %{REQUEST_URI} !^/(.*)$
+RewriteRule ^(.*)$ /$1 [L]
 
-RewriteCond %{HTTP_HOST} !^pirhoo\.com$ [NC]
-RewriteRule ^(.*)$ http://www.pirhoo.com/$1 [R=301,L]
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^pirhoo.cloudcontrolled.com
+RewriteRule ^(.*)$ http://pirhoo.com/$1 [R=301,L]
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www.pirhoo.com
