@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2012-02-06 23:27:10
+<?php /* Smarty version Smarty-3.0.8, created on 2012-02-09 18:07:57
          compiled from "/Users/pirhoo/Lab/Web/Personal/Pirhoo.v2/pirhoo-core/template/html/homepage.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:13327531274f3053bedfd8e5-16984984%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:10803509424f33fd6dc139a6-27479683%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '85ccfe7b5c8f16375c210478903d23aba5d7ae97' => 
     array (
       0 => '/Users/pirhoo/Lab/Web/Personal/Pirhoo.v2/pirhoo-core/template/html/homepage.tpl',
-      1 => 1328567188,
+      1 => 1328804880,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '13327531274f3053bedfd8e5-16984984',
+  'nocache_hash' => '10803509424f33fd6dc139a6-27479683',
   'function' => 
   array (
   ),
@@ -29,7 +29,7 @@ $_smarty_tpl->decodeProperties(array (
 			<h2>Directeur Général et co-fondateur de <a href="http://jplusplus.org" class="open-window">Journalism++</a></h2>
 			<p class="desc">Journalism++ donne du sens aux données en construisant des applications qui aident les gens à prendre de meilleures décisions.</p>
 
-			<h2>Intervenant à l'<a href="http://esj-lille.fr/" class="open-window">ESJ Lille</a>, au <a href="http://www.cfpj.com/ecole-de-journalisme/" class="open-window">CFJ Paris</a> et à <a href="http://www.sciencespo.fr/" class="open-window">Science Po Paris</a></h2>
+			<h2>Intervenant à l'<a href="http://esj-lille.fr/" class="open-window">ESJ Lille</a> et au <a href="http://www.cfpj.com/ecole-de-journalisme/" class="open-window">CFJ Paris</a></h2>
 			<p class="desc">J'interviens en école, en entreprise et en conférence pour parler des sujets liés au <a href="https://fr.wikipedia.org/wiki/Journalisme_de_donn%C3%A9es" class="open-window">Journalisme de données</a>.</p>
 
 

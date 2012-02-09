@@ -301,10 +301,13 @@ menu {
 		width:$thumbnailWidth;		
 		
 		@include transform(scale(1));
+		@include opacity(1);
 		@include transition(0.4s);
 
 		.csstransforms &.hidden {
-			@include transform(scale(0));
+			// @include transform(scale(0));		
+			//@include opacity(0);
+			left:-200px !important;
 		}
 		
 		.no-csstransforms &.hidden {

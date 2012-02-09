@@ -109,6 +109,10 @@
         // update the layout of every vignette
         site.el.$works.masonry("reload");
 
+        //  ajust the scroll     
+        $('html, body').scrollTop(site.el.$works.offset().top);
+
+
     }
 
 
@@ -174,7 +178,7 @@
         site.el.$content.find('.screen').waypoint({ offset: '0%', continuous: false });
 
         // Scroll to the right element
-        if(window.location.hash != "") {            
+        if(window.location.hash != "") {       
             $("html,body").scrollTop( $(window.location.hash).offset().top + 1 );
         }
             
