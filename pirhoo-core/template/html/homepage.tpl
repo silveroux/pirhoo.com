@@ -9,7 +9,7 @@
 			<h2>Directeur Général et co-fondateur de <a href="http://jplusplus.org" class="open-window">Journalism++</a></h2>
 			<p class="desc">Journalism++ donne du sens aux données en construisant des applications qui aident les gens à prendre de meilleures décisions.</p>
 
-			<h2>Intervenant à l'<a href="http://esj-lille.fr/" class="open-window">ESJ Lille</a>, au <a href="http://www.cfpj.com/ecole-de-journalisme/" class="open-window">CFJ Paris</a> et à <a href="http://www.sciencespo.fr/" class="open-window">Science Po Paris</a></h2>
+			<h2>Intervenant à l'<a href="http://esj-lille.fr/" class="open-window">ESJ Lille</a> et au <a href="http://www.cfpj.com/ecole-de-journalisme/" class="open-window">CFJ Paris</a></h2>
 			<p class="desc">J'interviens en école, en entreprise et en conférence pour parler des sujets liés au <a href="https://fr.wikipedia.org/wiki/Journalisme_de_donn%C3%A9es" class="open-window">Journalisme de données</a>.</p>
 
 
