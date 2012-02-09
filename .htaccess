@@ -5,7 +5,7 @@ RewriteRule ^(.*)$ /$1 [L]
 
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^pirhoo.cloudcontrolled.com
-RewriteRule ^(.*)$ http://pirhoo.com/$1 [R=301,L]
+RewriteRule ^(.*)$ http://www.pirhoo.com/$1 [R=301,L]
 
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^www.pirhoo.com
