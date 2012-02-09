@@ -131,12 +131,7 @@
             // options
             itemSelector : '.vignette:not(.hidden)',            
             //isFitWidth: true,
-            isAnimated: !Modernizr.csstransitions,
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
-            }
+            isAnimated: false // except with css transition
         });
 
         // the user wanna filter the list
