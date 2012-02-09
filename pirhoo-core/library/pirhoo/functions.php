@@ -1,5 +1,5 @@
 <?php
-
+	
 	function is_cctrl() {
 		return !strstr($_SERVER['SERVER_NAME'],'pirhoo.dev');
 	}
