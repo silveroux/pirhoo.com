@@ -18,7 +18,6 @@
     // Javscript files :
     $jsFiles = array();
     $jsFiles[] = "/pirhoo-core/javascript/jquery/jquery-last.min.js";    
-    $jsFiles[] = "/pirhoo-core/javascript/jquery/jquery.transform-0.9.3.min.js";
     $jsFiles[] = "/pirhoo-core/javascript/jquery/jquery.masonry.min.js"; 
     $jsFiles[] = "/pirhoo-core/javascript/jquery/jquery.waypoints.min.js";
     $jsFiles[] = "/pirhoo-core/javascript/glfx.js";
