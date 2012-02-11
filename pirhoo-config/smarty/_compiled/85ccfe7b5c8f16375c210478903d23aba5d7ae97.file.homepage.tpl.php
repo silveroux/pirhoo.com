@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2012-02-09 18:07:57
+<?php /* Smarty version Smarty-3.0.8, created on 2012-02-11 17:12:44
          compiled from "/Users/pirhoo/Lab/Web/Personal/Pirhoo.v2/pirhoo-core/template/html/homepage.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:10803509424f33fd6dc139a6-27479683%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1238513064f36937c21b586-65795913%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '85ccfe7b5c8f16375c210478903d23aba5d7ae97' => 
     array (
       0 => '/Users/pirhoo/Lab/Web/Personal/Pirhoo.v2/pirhoo-core/template/html/homepage.tpl',
-      1 => 1328804880,
+      1 => 1328976761,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '10803509424f33fd6dc139a6-27479683',
+  'nocache_hash' => '1238513064f36937c21b586-65795913',
   'function' => 
   array (
   ),
@@ -87,9 +87,10 @@ if ($_smarty_tpl->_count($_from) > 0){
 ">
 		                    <a href="<?php echo $_smarty_tpl->getVariable('permalink')->value;?>
 " class="preview open-window">                    
-		                        <img src="<?php echo $_smarty_tpl->getVariable('image')->value;?>
-" alt="">
-			                    </a>	                    
+		                        <img src="./pirhoo-core/library/timthumb.php?src=<?php echo $_smarty_tpl->getVariable('image')->value;?>
+&w=150" width="150" alt="">
+
+			                </a>	                    
 		                    <a href="<?php echo $_smarty_tpl->getVariable('permalink')->value;?>
 " class="open-window title">
 		                    	<span class="icon <?php echo $_smarty_tpl->tpl_vars['post']->value['type'];?>
@@ -147,9 +148,11 @@ if ($_smarty_tpl->_count($_from) > 0){
 ">
 		                    <a href="<?php echo $_smarty_tpl->getVariable('permalink')->value;?>
 " class="preview open-window">                    
-		                        <img src="<?php echo $_smarty_tpl->getVariable('image')->value;?>
-" alt="">
-			                    </a>	                    
+		                        <img src="./pirhoo-core/library/timthumb.php?src=<?php echo $_smarty_tpl->getVariable('image')->value;?>
+&w=150" width="150" alt="">
+                    
+
+			                </a>	                    
 		                    <a href="<?php echo $_smarty_tpl->getVariable('permalink')->value;?>
 " class="open-window title">
 		                    	<span class="icon <?php echo $_smarty_tpl->tpl_vars['post']->value['type'];?>

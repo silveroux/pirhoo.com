@@ -50,12 +50,12 @@
         </div>
 
         <menu>
-            <div class="me">
-                <h2><a class="icon active" href="#me">Qui suis-je ?</a></h2>
+            <div class="me section">
+                <h2><a class="active" href="#me">Qui suis-je ?</a></h2>
             </div>
 
-            <div class="filters">
-                <h2><a class="icon" href="#works">Mes travaux</a></h2>
+            <div class="filters section">
+                <h2><a class="" href="#works">Mes travaux</a></h2>
                 <ul>
                     <li class="icon all"><a href="#all" class="selected">Tous</a></li>
                     <li class="icon ddj"><a href="#ddj">Data-Journalism / Webapp</a></li>
@@ -64,8 +64,8 @@
                 </ul>
             </div>
 
-            <div>
-                <h2><a class="icon" href="#articles">Mes articles</a></h2>
+            <div class="section">
+                <h2><a href="#articles">Mes articles</a></h2>
             </div>
 
             <div class="share">

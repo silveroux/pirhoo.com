@@ -8,8 +8,6 @@
     
     var site = {};    
 
-
-
     
     /**
      * Bind live events
@@ -60,13 +58,13 @@
      * @function
      * @public
      */    
-    site.resizeBlocks = function() {
+    $(site.resizeBlocks = function() {
 
         $("menu,#content").css({
             minHeight: $(window).height() - $("#content").position().top
         })
 
-    };
+    });
     
     
     /**
@@ -78,9 +76,6 @@
     site.filterList = function(event) {
 
         event.preventDefault();
-
-        site.el.$filters.find("a").removeClass("selected");
-        $(this).addClass("selected");
 
         var target = $(this).attr("href").replace("#", "");
 
@@ -133,9 +128,6 @@
             $filters  : $(".filters")
         };
         
-
-        // changes the min height of a few blocks
-        site.resizeBlocks();
         // repeats the height after a window resizing 
         $(window).resize(site.resizeBlocks);
 
@@ -183,8 +175,96 @@
         }
             
 
-    });
+        site.el.$content.delegate(".preview", "mouseenter", function(event) {
+            
+            var $this = $(this);
+            // No canvas in the preview yet and webgl support
+            if( Modernizr.webgl && $this.find("canvas").length == 0) {
 
+                // creates a Canvas with the size of the preview
+                try {
+                    var canvas = fx.canvas();
+                } catch(e) {
+                    // Just stops if it failled
+                    return;
+                }
+
+                canvas.width = $this.width();
+                canvas.height = $this.height();
+
+
+                var img     = $this.find("img")[0],
+                    texture = canvas.texture(img);            
+
+                // append the canvas to the current preview
+                $this.append(canvas);
+            }
+
+            // Launch the animation only if the browser has WebGl support
+            if(Modernizr.webgl) {
+                
+                // direction of the animation
+                var canvas  = $this.find("canvas")[0],
+                    img     = $this.find("img")[0],
+                    texture = canvas.texture(img); 
+
+                canvas.state = "in";
+
+                // launch animation                    
+                (canvas.animation = function () {
+                    if( canvas.size == undefined ) canvas.size = 1;
+                    window.requestAnimFrame(function() {
+                        canvas.draw(texture).hexagonalPixelate(0, 0, canvas.size/10).update();
+                        //canvas.draw(texture).zoomBlur(canvas.width/2, canvas.height/2, canvas.size/100).update();
+                        if(++canvas.size < 100 && canvas.state == "in") canvas.animation();                         
+                    });
+                })();
+            }
+
+
+        });
+
+
+        site.el.$content.delegate(".preview", "mouseleave", function(event) {
+            var $this = $(this);
+            // Webgl support and canvas in the view
+            if( Modernizr.webgl  && $this.find("canvas").length == 1 ) {
+                
+                var canvas  = $this.find("canvas")[0],
+                    img     = $this.find("img")[0],
+                    texture = canvas.texture(img); 
+
+                // direction of the animation
+                canvas.state = "out";
+
+                // launch animation                    
+                (canvas.animation = function () {
+                    
+                    if( canvas.size == undefined ) canvas.size = 1;
+
+                    window.requestAnimFrame(function() {
+                        canvas.draw(texture).hexagonalPixelate(0, 0, canvas.size/10).update();
+                        //canvas.draw(texture).zoomBlur(canvas.width/2, canvas.height/2, canvas.size/100).update();
+                        if(--canvas.size > 0 && canvas.state == "out") canvas.animation();
+                    });
+
+                })();
+            }
+        });
+    });
 
     
 })(jQuery, window);
+
+// shim layer with setTimeout fallback
+// (Paul Irish method http://paulirish.com/2011/requestanimationframe-for-smart-animating/)
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       || 
+          window.webkitRequestAnimationFrame || 
+          window.mozRequestAnimationFrame    || 
+          window.oRequestAnimationFrame      || 
+          window.msRequestAnimationFrame     || 
+          function(/* function */ callback, /* DOMElement */ element){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();

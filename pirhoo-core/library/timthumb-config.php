@@ -6,6 +6,6 @@
 	define ('FILE_CACHE_ENABLED', TRUE);
 	define ('FILE_CACHE_DIRECTORY', is_cctrl() ? $_SERVER["TMPDIR"] : "../cache/");
 
-	$ALLOWED_SITES = array("branchetonsonotone.com", "oeildupirate.com");
+	$ALLOWED_SITES = array("branchetonsonotone.com", "oeildupirate.com", "pirhoo.dev");
 
 ?>

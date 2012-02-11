@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2012-02-09 15:32:46
+<?php /* Smarty version Smarty-3.0.8, created on 2012-02-11 18:59:22
          compiled from "/Users/pirhoo/Lab/Web/Personal/Pirhoo.v2/pirhoo-core/template/html/sub/header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:12010812844f33d90eb210b2-75175058%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:15461185564f36ac7a733a60-52282240%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e9483400f4f41eda059414056c72a95ca239a77f' => 
     array (
       0 => '/Users/pirhoo/Lab/Web/Personal/Pirhoo.v2/pirhoo-core/template/html/sub/header.tpl',
-      1 => 1328797945,
+      1 => 1328983133,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '12010812844f33d90eb210b2-75175058',
+  'nocache_hash' => '15461185564f36ac7a733a60-52282240',
   'function' => 
   array (
   ),
@@ -73,12 +73,12 @@ $_template->assign('type','css');$_template->assign('list',$_smarty_tpl->getVari
         </div>
 
         <menu>
-            <div class="me">
-                <h2><a class="icon active" href="#me">Qui suis-je ?</a></h2>
+            <div class="me section">
+                <h2><a class="active" href="#me">Qui suis-je ?</a></h2>
             </div>
 
-            <div class="filters">
-                <h2><a class="icon" href="#works">Mes travaux</a></h2>
+            <div class="filters section">
+                <h2><a class="" href="#works">Mes travaux</a></h2>
                 <ul>
                     <li class="icon all"><a href="#all" class="selected">Tous</a></li>
                     <li class="icon ddj"><a href="#ddj">Data-Journalism / Webapp</a></li>
@@ -87,8 +87,8 @@ $_template->assign('type','css');$_template->assign('list',$_smarty_tpl->getVari
                 </ul>
             </div>
 
-            <div>
-                <h2><a class="icon" href="#articles">Mes articles</a></h2>
+            <div class="section">
+                <h2><a href="#articles">Mes articles</a></h2>
             </div>
 
             <div class="share">
