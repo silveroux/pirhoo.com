@@ -79,6 +79,9 @@
 
         var target = $(this).attr("href").replace("#", "");
 
+        site.el.$filters.find("a").removeClass("selected");
+        $(this).addClass("selected");
+
         // if we wanna show every vignette
         if(target == "all") {
             // show every vignette
