@@ -1,7 +1,7 @@
 <?php
 	
 	function is_cctrl() {
-		return !strstr($_SERVER['SERVER_NAME'],'pirhoo.dev');
+		return !strstr($_SERVER['SERVER_NAME'],'pirhoo.dev') && !$_SERVER['SERVER_NAME'] == "127.0.0.1";
 	}
 
 	function get_all_posts() {
