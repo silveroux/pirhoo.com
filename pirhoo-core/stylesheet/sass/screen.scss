@@ -1,7 +1,7 @@
 @import "base";
 
 body {	
-	background:url("../image/paper.jpg");
+	background:url("../image/bg.jpg");
 }
 
 menu {
@@ -15,7 +15,7 @@ menu {
 
 	
 	font-family:'Terminal Dosis', arial,sans-serif;
-	background:url("../image/paper.jpg");
+	background:url("../image/bg.jpg");
 	
 	border-right:1px solid white;
 	@include text-shadow(0 0 1px white);
@@ -186,7 +186,7 @@ menu {
 	position:relative;
 	z-index:80;
 
-	background:rgba(#fff, 0.4);
+	background:rgba(#fff, 0.6);
 
 	#me {
 		padding-bottom:100px;
