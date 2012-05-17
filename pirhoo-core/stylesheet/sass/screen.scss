@@ -107,73 +107,22 @@ menu {
 	top:10px;
 	right:10px;
 
-	padding:5px 8px;	
-	border:1px solid #eee;		
-	background:#fafafa;		
+	font-size:20px;
 
-	color:#666;
-	font-weight:bold;
-	font-size:12px;
+	li {
+		float:left;
+		padding-right:5px;
 
-	@include border-radius(3px);
-	
-	@include box-shadow(inset 0 1px 3px rgba(#000,0.6), 
-						inset 0 0 0 1px rgba(#000,0.1),
-						inset 0 0 25px 0 rgba(#000,0.1) );
+		a {
+			color:#9a9a9a;
+			@include text-shadow(1px 1px 0px white, 0 0 10px rgba(#000, 0.15));
+			@include transition(0.4s);
 
-	&:after {
-		background-position:-13*24px -5*24px;
-		display:block;
-		top:5px;
-		@include opacity(0.5);
-	}
-
-	a { 
-		color:#888;		
-		padding-right:25px;
-	}
-
-	&:hover {
-		border:1px solid #aaa;
-		@include box-shadow(0px 3px 5px 0 rgba(#000, 0.1) );			
-		@include bg-gradient(#fff, #eee);
-
-		&:after {
-			background-position:-12*24px -5*24px;
-		}
-
-		ul {
-			margin:5px;
-			margin-bottom:0;
-
-			max-height:200px;
-			max-width:200px;
-
-			@include opacity(1);	
-			font-weight:normal;	
-			
-			a { padding:0; }		
+			&:hover {
+				color:$base-link-color;
+			}
 		}
 	}
-
-	ul {
-
-		max-height:0;
-		max-width:0;
-
-		overflow:hidden;			
-		margin:0px;
-				
-		@include opacity(0);		
-		@include transition(0.4s);
-
-		li {
-			padding:3px 0;
-			text-align:right;
-		}
-	}
-
-
 }
 
 #content {	

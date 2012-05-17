@@ -9,11 +9,21 @@
      * @author pirhoo <pierre.romera@gmail.com>
      * 
      */     
-    $homepage = new Screen($s, "atom/feed.tpl");
+
+    $feed = apc_fetch("feed");
+    // there is a page in the apc cache
+    if( $feed && !$_GET['debug'] == "cache" ) {  
+        // display the page from the cache
+        $feed->display();          
+        // stop the excecution
+        exit;        
+    }
+
+    $feed = new Screen($s, "atom/feed.tpl");
     // screen title
-    $homepage->setScreenTitle("Pierre Romera (Pirhoo) : Flux");
+    $feed->setScreenTitle("Pierre Romera (Pirhoo) : Flux");
     // screen id
-    $homepage->setScreenId("Feed"); 
+    $feed->setScreenId("Feed"); 
         
     // get all post (from the cache or from the servers)
     $posts = get_all_posts();
@@ -21,6 +31,7 @@
     // we asign it to the template
     $s->assign("posts", array_slice($posts,0,30) );
     
-    // display the homepage
-    $homepage->display();
+    // display the feed
+    $feed->display();
+    apc_add("feed", $feed, 60*60*24);
 ?>

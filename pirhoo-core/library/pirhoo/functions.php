@@ -10,7 +10,7 @@
 		if( is_cctrl() ) $postsFile = $_SERVER["TMPDIR"]."/posts.json";
 		            
 	    // if the file doesn't exist or is too old (7 days)
-	    if(!file_exists($postsFile)  ||  time() - filemtime($postsFile) > 60*60*24*7 || isset($_GET["update"])) {
+	    if(!file_exists($postsFile)  ||  time() - filemtime($postsFile) > 60*60*24*7 || $_GET["debug"] == "update") {
 	        // get posts        
 	        $posts = get_posts("http://pirhoo2.oeildupirate.com", 40);
 	        $posts = array_merge( $posts, get_posts("http://oeildupirate.com/author/pirhoo/", 20) );

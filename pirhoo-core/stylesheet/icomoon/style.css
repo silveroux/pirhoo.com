@@ -1,0 +1,52 @@
+@font-face {
+	font-family: 'IcoMoon';
+	src: url('icomoon.eot');
+	src: url('icomoon.eot?#iefix') format('embedded-opentype'),
+		url('icomoon.svg#IcoMoon') format('svg'),
+		url('icomoon.woff') format('woff'),
+		url('icomoon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Add the following classes to your stylesheet if you want to use data attributes for inserting your icons */
+.iconb:before, .icona:after {
+	font-family: 'IcoMoon';
+	content: attr(data-icon);
+}
+
+/* Add the following CSS properties to your stylesheet if you want to have a class per icon */
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'IcoMoon';
+	font-style: normal;
+}
+.icon-twitter:before {
+	content: "\0021";
+}
+.icon-facebook:before {
+	content: "\0022";
+}
+.icon-phone:before {
+	content: "\0023";
+}
+.icon-github:before {
+	content: "\0024";
+}
+.icon-google-plus:before {
+	content: "\0025";
+}
+.icon-tumblr:before {
+	content: "\0026";
+}
+.icon-feed:before {
+	content: "\0027";
+}
+.icon-skype:before {
+	content: "\0028";
+}
+.icon-html5:before {
+	content: "\0029";
+}
+.icon-mail:before {
+	content: "\002a";
+}

@@ -8,7 +8,17 @@
      * 
      * @author pirhoo <pierre.romera@gmail.com>
      * 
-     */     
+     */             
+    $homepage = apc_fetch("homepage");
+    // there is a page in the apc cache
+    if( $homepage && !$_GET['debug'] == "cache" ) {  
+        // display the page from the cache
+        $homepage->display();          
+        // stop the excecution
+        exit;        
+    }
+
+
     $homepage = new Screen($s, "html/homepage.tpl");
     // screen title
     $homepage->setScreenTitle("Homepage");
@@ -30,13 +40,13 @@
     // for Facebbok,
     $homepage->addHeaderFile("javascript", "//connect.facebook.net/en_US/all.js#xfbml=1");
     // and for Google+
-    $homepage->addHeaderFile("javascript", "//apis.google.com/js/plusone.js");    
-    
+    $homepage->addHeaderFile("javascript", "//apis.google.com/js/plusone.js");        
     
     // Stylesheet files : 
     $cssFiles = array();
     $cssFiles[] = "/pirhoo-core/stylesheet/generic.css";
     $cssFiles[] = "/pirhoo-core/stylesheet/screen.css";
+    $cssFiles[] = "/pirhoo-core/stylesheet/icomoon/style.css";
     // create minify path
     $homepage->setHeaderFile("stylesheet", "./pirhoo-core/library/minify/?debug&f=".implode(',', $cssFiles) );
         
@@ -47,5 +57,6 @@
     $s->assign("posts", $posts);
     
     // display the homepage
-    $homepage->display();
+    $homepage->display();      
+    apc_add("homepage", $homepage, 60*60*24);
 ?>
