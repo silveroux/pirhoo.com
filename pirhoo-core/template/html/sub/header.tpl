@@ -33,7 +33,7 @@
 
     </head>
 
-    <body onload="window.scrollTo(0, 1)">
+    <body>
         
         {* Facebook root (required for FBML widgets) *}
         <div id="fb-root"></div>
