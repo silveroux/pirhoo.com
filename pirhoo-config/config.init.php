@@ -9,11 +9,12 @@
     define("BASE_DIR",   preg_replace("#/pirhoo-config$#i", "", dirname(__FILE__)));
     define("CONFIG_DIR", BASE_DIR."/pirhoo-config");
     define("CORE_DIR",   BASE_DIR."/pirhoo-core");
+    define("TMP_DIR", isset($server["TMP_DIR"]) ? $server["TMP_DIR"] : CONFIG_DIR);
     
     define("SMARTY_TEMPLATE_DIR", CORE_DIR."/template");
-    define("SMARTY_COMPILED_DIR", CONFIG_DIR."/smarty/_compiled");
-    define("SMARTY_CACHE_DIR",    CONFIG_DIR."/smarty/_cache");
-    define("SMARTY_CONFIG_DIR",   CONFIG_DIR."/smarty/");
+    define("SMARTY_COMPILED_DIR", TMP_DIR."/smarty/_compiled");
+    define("SMARTY_CACHE_DIR",    TMP_DIR."/smarty/_cache");
+    define("SMARTY_CONFIG_DIR",   TMP_DIR."/smarty/");
     
     define("SITE_URL",   "http://".$_SERVER["SERVER_NAME"].str_replace("index.php", "", $_SERVER["SCRIPT_NAME"]) );
     define("SHARE_URL",  "http://www.pirhoo.com");    
