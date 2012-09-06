@@ -10,7 +10,7 @@
 			<p class="desc">Journalism++ accompagne les rédactions dans leur transition vers le web des données.</p>
 
 			<h2>Enseignant à l'<a href="http://www.journalisme.sciences-po.fr" target="_blank">École de Journalisme de Science Po</a></h2>
-			<p class="desc">J'initie les journalistes au langage et développement numérique.</p>
+			<p class="desc">J'initie les journalistes au langage et au développement numérique.</p>
 
 			<h2>Intervenant à l'<a href="http://esj-lille.fr/" class="open-window">ESJ Lille</a> et au <a href="http://www.cfpj.com/ecole-de-journalisme/" class="open-window">CFJ Paris</a></h2>
 			<p class="desc">J'interviens en école, en entreprise et en conférence pour parler des sujets liés au <a href="https://fr.wikipedia.org/wiki/Journalisme_de_donn%C3%A9es" class="open-window">Journalisme de données</a>.</p>
