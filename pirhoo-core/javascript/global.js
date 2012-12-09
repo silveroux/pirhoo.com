@@ -116,9 +116,9 @@
         });/**/
 
         // the user wanna filter the list
-        site.el.$filters.find("li a").bind("click touchend", site.filterList);
+        site.el.$filters.find("li a").bind("click touchend", function(e) { site.filterList.call(this, e); });
 
-        $("menu h2 a").bind("click touchend",(function(event) {   
+        $("menu h2 a").bind("click touchend", function(event) {   
 
             event.preventDefault();            
             $("menu h2 a").removeClass("active").filter(this).addClass("active"); 
