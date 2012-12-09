@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: pirhoo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-12-09 22:22+0100\n"
-"PO-Revision-Date: 2012-12-09 22:49+0100\n"
+"PO-Revision-Date: 2012-12-10 00:03+0100\n"
 "Last-Translator: pirhoo <hello@pirhoo.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -92,6 +92,6 @@ msgid "Directeur Général Délégué chez <a href=\"http://owni.fr\" class=\"op
 msgstr "Chief operating officer at <a href=\"http://owni.fr\" class=\"open-window\">OWNI</a>/<a href=\"http://22mars.com\" class=\"open-window\">22mars</a>"
 
 #: /home/pirhoo/Lab/Personal/Pirhoo.v2/pirhoo-config/locale/locale.php:30
-msgid "OWNI est un media en ligne, pionnier fran&ccedil;ais du Data Journalism."
+msgid "OWNI est un media en ligne, pionnier français du Data Journalism."
 msgstr "OWNI is an online media, french pionner in Data Driven Journalism"
 
