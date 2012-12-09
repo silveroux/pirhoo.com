@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2012-12-09 23:10:54
+<?php /* Smarty version Smarty-3.0.8, created on 2012-12-09 23:34:54
          compiled from "/home/pirhoo/Lab/Personal/Pirhoo.v2/pirhoo-core/template/html/sub/header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:36070369550c50c6ece4df4-26518556%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:75343297350c5120ed719f9-62441210%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1c830732d401b4cb1fda84459eb602d62dc4d226' => 
     array (
       0 => '/home/pirhoo/Lab/Personal/Pirhoo.v2/pirhoo-core/template/html/sub/header.tpl',
-      1 => 1355091053,
+      1 => 1355092470,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '36070369550c50c6ece4df4-26518556',
+  'nocache_hash' => '75343297350c5120ed719f9-62441210',
   'function' => 
   array (
   ),
@@ -27,8 +27,14 @@ $_smarty_tpl->decodeProperties(array (
         <link href='//fonts.googleapis.com/css?family=Terminal+Dosis:400,500,800,700,600,300,200:latin' rel='stylesheet' type='text/css'>             
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1">
  		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <link rel="apple-touch-icon" href="<?php echo @SITE_URL;?>
+/pirhoo-core/image/penguin_nb.jpg"/>
+        <meta name="viewport" content="width=960,  user-scalable=yes, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
    
         
         <meta name="description" content="Ce portfolio présente les travaux de Pierre Romera (Pirhoo), petit manchot développeur Web, expert en Data-Journalism." />

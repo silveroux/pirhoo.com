@@ -8,8 +8,13 @@
         <link href='//fonts.googleapis.com/css?family=Terminal+Dosis:400,500,800,700,600,300,200:latin' rel='stylesheet' type='text/css'>             
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1">
  		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <link rel="apple-touch-icon" href="{$smarty.const.SITE_URL}/pirhoo-core/image/penguin_nb.jpg"/>
+        <meta name="viewport" content="width=960,  user-scalable=yes, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
    
         
         <meta name="description" content="Ce portfolio présente les travaux de Pierre Romera (Pirhoo), petit manchot développeur Web, expert en Data-Journalism." />

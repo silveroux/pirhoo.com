@@ -113,7 +113,7 @@
             contentsElement: site.el.$content[0],
             position: 'left',
             width: 211
-        });/**/
+        });
 
         // the user wanna filter the list
         site.el.$filters.find("li a").click(site.filterList);
@@ -132,6 +132,11 @@
             //  ajust the scroll                 
             site.el.$overflow.scrollTo( target, scrollDuration, scrollOptions);
 
+        });
+
+        $("#sub-menu li").click(function() {      
+            var target = "#" + $(this).data("target");                  
+            site.el.$menu.find("h2 a[href='" +target+ "']").trigger("click");
         });
 
         // The same for all waypoints

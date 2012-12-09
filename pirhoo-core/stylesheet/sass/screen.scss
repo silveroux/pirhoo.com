@@ -4,7 +4,7 @@ $menuWidth:210px;
 $subMenuWidth:40px;
 $thumbnailWidth:150px;
 
-body {	
+body, html {	
 	background:url("../image/bg-dark.jpg") black;
 	position:absolute;
 	top:0; left:0;
@@ -219,6 +219,7 @@ menu {
 			height:25px;
 			text-align: center;
 			background:transparent;			
+			cursor:pointer;
 			@include transition(0.4s);
 
 			&.articles {
