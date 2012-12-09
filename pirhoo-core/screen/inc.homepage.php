@@ -9,6 +9,12 @@
      * @author pirhoo <pierre.romera@gmail.com>
      * 
      */             
+    
+    if( isset($_GET["lang"]) ) {
+        header("Location: ".SITE_URL);
+        exit;
+    }
+    
     $homepage = apc_fetch("homepage_".SITE_LANG);
     // there is a page in the apc cache
     if( $homepage && !$_GET['debug'] == "cache" ) {  
