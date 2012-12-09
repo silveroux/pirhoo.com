@@ -10,8 +10,11 @@
     // Load the current configuration 
     // ------------------------------
     require_once('./pirhoo-config/config.global.php');
-    
+
     require_once(CORE_DIR . "/library/pirhoo/functions.php");
+
+    // define the current language
+
     // screen Class to make screens
     require_once(CORE_DIR . "/library/pirhoo/Screen.class.php");
     

@@ -9,7 +9,7 @@
      * @author pirhoo <pierre.romera@gmail.com>
      * 
      */             
-    $homepage = apc_fetch("homepage");
+    $homepage = apc_fetch("homepage_".SITE_LANG);
     // there is a page in the apc cache
     if( $homepage && !$_GET['debug'] == "cache" ) {  
         // display the page from the cache
@@ -60,5 +60,5 @@
     
     // display the homepage
     $homepage->display();      
-    apc_add("homepage", $homepage, 60*60*24);
+    apc_add("homepage_".SITE_LANG, $homepage, 60*60*24);
 ?>

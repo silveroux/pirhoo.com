@@ -18,6 +18,7 @@
 
     // lance une session si celle-ci n'est pas déjà lancée
     if(session_id() == "") session_start();
+
     
     require_once("config.init.php")
 ?>

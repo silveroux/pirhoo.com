@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.8, created on 2012-12-09 21:09:14
+<?php /* Smarty version Smarty-3.0.8, created on 2012-12-09 23:10:54
          compiled from "/home/pirhoo/Lab/Personal/Pirhoo.v2/pirhoo-core/template/html/sub/header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:184416881350c4efea6903e1-85050149%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:36070369550c50c6ece4df4-26518556%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1c830732d401b4cb1fda84459eb602d62dc4d226' => 
     array (
       0 => '/home/pirhoo/Lab/Personal/Pirhoo.v2/pirhoo-core/template/html/sub/header.tpl',
-      1 => 1355083753,
+      1 => 1355091053,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '184416881350c4efea6903e1-85050149',
+  'nocache_hash' => '36070369550c50c6ece4df4-26518556',
   'function' => 
   array (
   ),
@@ -60,10 +60,16 @@ $_template->assign('type','css');$_template->assign('list',$_smarty_tpl->getVari
     <body>
         
         <div id="fb-root"></div>
-        
+
         <div id="contact">
-            <a class="fhidden">Contact</a>
-            <ul>
+            <span class="lang">
+                <a class="<?php if (@SITE_LANG=='fr_FR'){?>active<?php }?>" href="?lang=fr_FR">français</a>
+                <a class="<?php if (@SITE_LANG=='en_US'){?>active<?php }?>" href="?lang=en_US">english</a>
+            </span>
+            <a class="fhidden"><?php $_smarty_tpl->smarty->_tag_stack[] = array('t', array()); $_block_repeat=true; smarty_translate(array(), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
+Contact<?php $_block_content = ob_get_clean(); $_block_repeat=false; echo smarty_translate(array(), $_block_content, $_smarty_tpl, $_block_repeat); } array_pop($_smarty_tpl->smarty->_tag_stack);?>
+</a>
+            <ul class="links">
                 <li><a class="icomoon" href="//twitter.com/pirhoo" class="open-window" title="Twitter">!</a></li>
                 <li><a class="icomoon" href="//github.com/pirhoo" class="open-window" title="GitHub">$</a></li>
                 <li><a class="icomoon" href="//www.facebook.com/pierre.romera" class="open-window" title="Facebook">"</a></li>
@@ -77,21 +83,35 @@ $_template->assign('type','css');$_template->assign('list',$_smarty_tpl->getVari
 
         <menu>
             <div class="me section">
-                <h2><a class="active" href="#me">Qui suis-je ?</a></h2>
+                <h2><a class="active" href="#me"><?php $_smarty_tpl->smarty->_tag_stack[] = array('t', array()); $_block_repeat=true; smarty_translate(array(), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
+Qui suis-je ?<?php $_block_content = ob_get_clean(); $_block_repeat=false; echo smarty_translate(array(), $_block_content, $_smarty_tpl, $_block_repeat); } array_pop($_smarty_tpl->smarty->_tag_stack);?>
+</a></h2>
             </div>
 
             <div class="filters section">
-                <h2><a class="" href="#works">Mes travaux</a></h2>
+                <h2><a class="" href="#works"><?php $_smarty_tpl->smarty->_tag_stack[] = array('t', array()); $_block_repeat=true; smarty_translate(array(), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
+Mes travaux<?php $_block_content = ob_get_clean(); $_block_repeat=false; echo smarty_translate(array(), $_block_content, $_smarty_tpl, $_block_repeat); } array_pop($_smarty_tpl->smarty->_tag_stack);?>
+</a></h2>
                 <ul>
-                    <li class="icon all"><a href="#all" class="selected">Tous</a></li>
-                    <li class="icon ddj"><a href="#ddj">Data-Journalism / Webapp</a></li>
-                    <li class="icon site"><a href="#site">Site</a></li>
-                    <li class="icon speach"><a href="#speach">Cours / Conférence</a></li>
+                    <li class="icon all"><a href="#all" class="selected"><?php $_smarty_tpl->smarty->_tag_stack[] = array('t', array()); $_block_repeat=true; smarty_translate(array(), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
+Tous<?php $_block_content = ob_get_clean(); $_block_repeat=false; echo smarty_translate(array(), $_block_content, $_smarty_tpl, $_block_repeat); } array_pop($_smarty_tpl->smarty->_tag_stack);?>
+</a></li>
+                    <li class="icon ddj"><a href="#ddj"><?php $_smarty_tpl->smarty->_tag_stack[] = array('t', array()); $_block_repeat=true; smarty_translate(array(), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
+Data-Journalism / Webapp<?php $_block_content = ob_get_clean(); $_block_repeat=false; echo smarty_translate(array(), $_block_content, $_smarty_tpl, $_block_repeat); } array_pop($_smarty_tpl->smarty->_tag_stack);?>
+</a></li>
+                    <li class="icon site"><a href="#site"><?php $_smarty_tpl->smarty->_tag_stack[] = array('t', array()); $_block_repeat=true; smarty_translate(array(), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
+Site<?php $_block_content = ob_get_clean(); $_block_repeat=false; echo smarty_translate(array(), $_block_content, $_smarty_tpl, $_block_repeat); } array_pop($_smarty_tpl->smarty->_tag_stack);?>
+</a></li>
+                    <li class="icon speach"><a href="#speach"><?php $_smarty_tpl->smarty->_tag_stack[] = array('t', array()); $_block_repeat=true; smarty_translate(array(), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
+Cours / Conférence<?php $_block_content = ob_get_clean(); $_block_repeat=false; echo smarty_translate(array(), $_block_content, $_smarty_tpl, $_block_repeat); } array_pop($_smarty_tpl->smarty->_tag_stack);?>
+</a></li>
                 </ul>
             </div>
 
             <div class="section">
-                <h2><a href="#articles">Mes articles</a></h2>
+                <h2><a href="#articles"><?php $_smarty_tpl->smarty->_tag_stack[] = array('t', array()); $_block_repeat=true; smarty_translate(array(), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
+Mes articles<?php $_block_content = ob_get_clean(); $_block_repeat=false; echo smarty_translate(array(), $_block_content, $_smarty_tpl, $_block_repeat); } array_pop($_smarty_tpl->smarty->_tag_stack);?>
+</a></h2>
             </div>
 
             <div class="share">

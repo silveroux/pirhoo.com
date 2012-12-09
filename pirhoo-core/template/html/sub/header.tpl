@@ -37,10 +37,14 @@
         
         {* Facebook root (required for FBML widgets) *}
         <div id="fb-root"></div>
-        
+
         <div id="contact">
-            <a class="fhidden">Contact</a>
-            <ul>
+            <span class="lang">
+                <a class="{if $smarty.const.SITE_LANG == 'fr_FR' }active{/if}" href="?lang=fr_FR">français</a>
+                <a class="{if $smarty.const.SITE_LANG == 'en_US' }active{/if}" href="?lang=en_US">english</a>
+            </span>
+            <a class="fhidden">{t}Contact{/t}</a>
+            <ul class="links">
                 <li><a class="icomoon" href="//twitter.com/pirhoo" class="open-window" title="Twitter">!</a></li>
                 <li><a class="icomoon" href="//github.com/pirhoo" class="open-window" title="GitHub">$</a></li>
                 <li><a class="icomoon" href="//www.facebook.com/pierre.romera" class="open-window" title="Facebook">"</a></li>
@@ -54,21 +58,21 @@
 
         <menu>
             <div class="me section">
-                <h2><a class="active" href="#me">Qui suis-je ?</a></h2>
+                <h2><a class="active" href="#me">{t}Qui suis-je ?{/t}</a></h2>
             </div>
 
             <div class="filters section">
-                <h2><a class="" href="#works">Mes travaux</a></h2>
+                <h2><a class="" href="#works">{t}Mes travaux{/t}</a></h2>
                 <ul>
-                    <li class="icon all"><a href="#all" class="selected">Tous</a></li>
-                    <li class="icon ddj"><a href="#ddj">Data-Journalism / Webapp</a></li>
-                    <li class="icon site"><a href="#site">Site</a></li>
-                    <li class="icon speach"><a href="#speach">Cours / Conférence</a></li>
+                    <li class="icon all"><a href="#all" class="selected">{t}Tous{/t}</a></li>
+                    <li class="icon ddj"><a href="#ddj">{t}Data-Journalism / Webapp{/t}</a></li>
+                    <li class="icon site"><a href="#site">{t}Site{/t}</a></li>
+                    <li class="icon speach"><a href="#speach">{t}Cours / Conférence{/t}</a></li>
                 </ul>
             </div>
 
             <div class="section">
-                <h2><a href="#articles">Mes articles</a></h2>
+                <h2><a href="#articles">{t}Mes articles{/t}</a></h2>
             </div>
 
             <div class="share">

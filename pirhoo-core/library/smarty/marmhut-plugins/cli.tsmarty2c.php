@@ -1,7 +1,5 @@
 #!/usr/local/bin/php -qn
 <?php
-
-         
 /**
  * tsmarty2c.php - rips gettext strings from smarty template
  *
@@ -29,17 +27,13 @@
  *
  * If a parameter is a directory, the template files within will be parsed.
  *
- * @package	smarty-gettext
- * @version	$Id: tsmarty2c.php,v 1.2 2004/04/30 11:40:22 sagi Exp $
- * @link	http://smarty-gettext.sf.net/
- * @author	Sagi Bashari <sagi@boom.org.il>
+ * @package smarty-gettext
+ * @version $Id: tsmarty2c.php,v 1.2 2004/04/30 11:40:22 sagi Exp $
+ * @link    http://smarty-gettext.sf.net/
+ * @author  Sagi Bashari <sagi@boom.org.il>
  * @copyright 2004 Sagi Bashari
  */
 
- ini_set('display_errors', 0);
- ini_set('log_errors', 0);
- error_reporting(null); 
-         
 // smarty open tag
 $ldq = preg_quote('{');
 
@@ -52,81 +46,75 @@ $cmd = preg_quote('t');
 // extensions of smarty files, used when going through a directory
 $extensions = array('tpl');
 
-// old entries
-$entries = array();
-
 // "fix" string - strip slashes, escape and convert new lines to \n
 function fs($str)
 {
-	$str = stripslashes($str);
-	$str = str_replace('"', '\"', $str);
-	$str = str_replace("\n", '\n', $str);
-	return $str;
+    $str = stripslashes($str);
+    $str = str_replace('"', '\"', $str);
+    $str = str_replace("\n", '\n', $str);
+    return $str;
 }
 
+function prepare($str) {
+    return htmlspecialchars_decode(htmlentities($str));
+}
 // rips gettext strings from $file and prints them in C format
 function do_file($file)
 {
-	$content = @file_get_contents($file);
+    $content = @file_get_contents($file);
 
-        if (empty($content)) {
-		return;
-	}
+    if (empty($content)) {
+        return;
+    }
 
-	global $ldq, $rdq, $cmd, $entries;
+    global $ldq, $rdq, $cmd;
 
-	preg_match_all("/{$ldq}\s*({$cmd})\s*([^{$rdq}]*){$rdq}([^{$ldq}]*){$ldq}\/\\1{$rdq}/", $content, $matches);
-	
-	for ($i=0; $i < count($matches[0]); $i++) {
-            
-            $val = fs($matches[3][$i]);
-            
-            if( !in_array($val, $entries, true) ) {
-                
-                print 'msgid "'.$val.'"'."\n";
-                print 'msgstr "'.$val.'"'."\n";
-                
-                $entries[] = $val;
-                
-            }
-			
-	}
-        
-        
+    preg_match_all("/{$ldq}\s*({$cmd})\s*([^{$rdq}]*){$rdq}([^{$ldq}]*){$ldq}\/\\1{$rdq}/", $content, $matches);
+    
+    print("\n<?php\n");
+    for ($i=0; $i < count($matches[0]); $i++) {
+        if (preg_match('/plural\s*=\s*["\']?\s*(.[^\"\']*)\s*["\']?/', $matches[2][$i], $match)) {
+            print 'ngettext("'.prepare(fs($matches[3][$i])).'","'.prepare(fs($match[1])).'",x);'."\n";
+        } else {
+            print 'gettext("'.prepare(fs($matches[3][$i])).'");'."\n";
+        }
+    }
+
+    print("\n?>\n");
 }
 
 // go through a directory
 function do_dir($dir)
 {
-	$d = dir($dir);
+    $d = dir($dir);
 
-	while (false !== ($entry = $d->read())) {
-		if ($entry == '.' || $entry == '..') {
-			continue;
-		}
+    while (false !== ($entry = $d->read())) {
+        if ($entry == '.' || $entry == '..') {
+            continue;
+        }
 
-		$entry = $dir.'/'.$entry;
+        $entry = $dir.'/'.$entry;
 
-		if (is_dir($entry)) { // if a directory, go through it
-			do_dir($entry);
-		} else { // if file, parse only if extension is matched
-			$pi = pathinfo($entry);
-			
-			if (isset($pi['extension']) && in_array($pi['extension'], $GLOBALS['extensions'])) {
-				do_file($entry);
-			}
-		}
-	}
+        if (is_dir($entry)) { // if a directory, go through it
+            do_dir($entry);
+        } else { // if file, parse only if extension is matched
+            $pi = pathinfo($entry);
+            
+            if (isset($pi['extension']) && in_array($pi['extension'], $GLOBALS['extensions'])) {
+                do_file($entry);
+            }
+        }
+    }
 
-	$d->close();
+    $d->close();
 }
 
 for ($ac=1; $ac < $_SERVER['argc']; $ac++) {
-	if (is_dir($_SERVER['argv'][$ac])) { // go through directory
-		do_dir($_SERVER['argv'][$ac]);
-	} else { // do file
-		do_file($_SERVER['argv'][$ac]);
-	}
+    if (is_dir($_SERVER['argv'][$ac])) { // go through directory
+        do_dir($_SERVER['argv'][$ac]);
+    } else { // do file
+        do_file($_SERVER['argv'][$ac]);
+    }
 }
 
 ?>
