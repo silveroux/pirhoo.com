@@ -107,7 +107,7 @@
             isAnimated: false
         });
 
-        /*/ initializes the Meny menu
+        // initializes the Meny menu
         var meny = Meny.create({
             menuElement: site.el.$menu[0],
             contentsElement: site.el.$content[0],
