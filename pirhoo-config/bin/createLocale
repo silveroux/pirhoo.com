@@ -1,0 +1,3 @@
+#!/bin/bash
+
+php ../../pirhoo-core/library/smarty/marmhut-plugins/cli.tsmarty2c.php ../../pirhoo-core/template > ../locale/locale.php
