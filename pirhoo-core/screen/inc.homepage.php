@@ -9,8 +9,6 @@
      * @author pirhoo <pierre.romera@gmail.com>
      * 
      */             
-    //apc_delete("homepage");
-    apc_delete("homepage");
     $homepage = apc_fetch("homepage");
     // there is a page in the apc cache
     if( $homepage && !$_GET['debug'] == "cache" ) {  
