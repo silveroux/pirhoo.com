@@ -107,18 +107,18 @@
             isAnimated: false
         });
 
-        // initializes the Meny menu
+        /*/ initializes the Meny menu
         var meny = Meny.create({
             menuElement: site.el.$menu[0],
             contentsElement: site.el.$content[0],
             position: 'left',
             width: 211
-        });
+        });/**/
 
         // the user wanna filter the list
-        site.el.$filters.find("li a").click(site.filterList);
+        site.el.$filters.find("li a").bind("click touchend", site.filterList);
 
-        $("menu h2 a").click(function(event) {   
+        $("menu h2 a").bind("click touchend",(function(event) {   
 
             event.preventDefault();            
             $("menu h2 a").removeClass("active").filter(this).addClass("active"); 
@@ -134,7 +134,7 @@
 
         });
 
-        $("#sub-menu li").click(function() {      
+        $("#sub-menu li").bind("click touchend", function() {      
             var target = "#" + $(this).data("target");                  
             site.el.$menu.find("h2 a[href='" +target+ "']").trigger("click");
         });
