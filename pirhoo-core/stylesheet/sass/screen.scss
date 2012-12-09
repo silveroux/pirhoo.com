@@ -1,7 +1,14 @@
 @import "base";
 
+$menuWidth:210px;
+$subMenuWidth:40px;
+$thumbnailWidth:150px;
+
 body {	
-	background:url("../image/bg.jpg");
+	background:url("../image/bg-dark.jpg") black;
+	position:absolute;
+	top:0; left:0;
+	bottom:0; right:0;
 }
 
 menu {
@@ -9,13 +16,13 @@ menu {
 	position:fixed;
 	z-index:60;
 	top:0; left:0;
+	bottom:0;
 
-	width:210px;
-	float:left;	
-
+	width:$menuWidth;
+	float:none;
 	
 	font-family:'Terminal Dosis', arial,sans-serif;
-	background:url("../image/bg.jpg");
+	background:url("../image/bg.jpg") silver;
 	
 	border-right:1px solid white;
 	@include text-shadow(0 0 1px white);
@@ -54,7 +61,8 @@ menu {
 	ul {
 				
 		li {		
-			position:relative;			
+			position:relative;	
+			height:25px;		
 					
 			a {
 				display:block;
@@ -109,14 +117,18 @@ menu {
 
 	font-size:20px;
 
+	.meny-active & a{
+		color:rgba(white, 0.4);
+	}
+
 	li {
 		float:left;
 		padding-right:5px;
 
 		a {
-			color:#9a9a9a;
-			@include text-shadow(1px 1px 0px white, 0 0 10px rgba(#000, 0.15));
-			@include transition(0.4s);
+			color:rgba(black, 0.4);
+			@include text-shadow(none);
+			@include transition(0.4s);			
 
 			&:hover {
 				color:$base-link-color;
@@ -127,20 +139,103 @@ menu {
 
 #content {	
 
-	$thumbnailWidth:150px;
-
 	@include box-shadow(-5px 0px 10px 0 rgba(#000, 0.1) );	
-	margin-left:210px;
+	background:url("../image/bg-white.jpg") white;
 
-	position:relative;
 	z-index:80;
+	position:absolute;
+	top:0; 
+	bottom:0;
+	right:0;
+	left:0;
+	padding-left:$subMenuWidth;
 
-	background:rgba(#fff, 0.6);
+	.overflow {
+		overflow:auto;
+		position:absolute;
+		top:48px; 
+		left:$subMenuWidth;
+		bottom:0;
+		right:0;
+	}
+
+	.meny-disable  & { 
+		left:210px;
+	}
+
+	#sub-menu {
+		position:absolute;
+		left:0;
+		top:0;
+		bottom:0;
+		width:$subMenuWidth;
+		background:#444;
+		@include box-shadow(-5px 0 5px 0 #222 inset);
+		padding-top:30px;
+
+		img { max-width: 100%; max-height: 100%; }
+		li {
+			padding:0;
+			margin-bottom:5px;
+			height:25px;
+			text-align: center;
+			background:transparent;			
+			@include transition(0.4s);
+
+			&.articles {
+				margin-top:105px;
+			}
+
+			&.active {
+				background:rgba(white, 0.3);
+			}
+		}
+	}
 
 	#me {
 		padding-bottom:100px;
-		padding-top:100px;
+		padding-top:60px;
 	}
+
+	h1 {
+		padding:10px 20px;			
+
+		color:#777;
+		font-size:18px;
+		@include text-shadow(1px 1px 0 #fff);
+
+		position:absolute;
+		z-index:300;
+		top:0;
+		left:0;
+		right:0;
+
+		.arrow {
+			padding:0 5px;
+		}
+	}
+	
+	#tracker {		
+		background:#fafafa;						
+		z-index:310;		
+		position:absolute;	
+
+		right:0;
+		left:$subMenuWidth;	
+		min-height:28px; 
+
+		.meny-disable  & { 
+			left:210px;
+		}	
+
+		@include opacity(1);
+		@include transition(opacity 0.5s);
+		.meny-active & {
+			@include opacity(0.6);
+		}
+		
+		@include box-shadow(0 0 5px 0 rgba(#000, 0.1) );				
+	}		
 
 	.screen {		
 		overflow:hidden;
@@ -149,40 +244,10 @@ menu {
 		padding-top:40px;
 		padding-bottom:20px;
 
-		border-bottom:1px solid #eee;
-		min-height:100%;
-
+		border-bottom:1px solid #eee;		
 		position:relative;
 
 		@include box-shadow(0px -5px 10px 0 rgba(#000, 0.1) );	
-
-		h1 {
-			padding:10px 20px;				
-			display:block;
-			width:100%;
-			
-			color:#777;
-			font-size:18px;
-			@include text-shadow(1px 1px 0 #fff);
-
-			position:absolute;
-			z-index:300;
-			top:0;
-			left:0;
-
-			.arrow {
-				padding:0 5px;
-			}
-		}
-		
-		&.active h1 {			
-			position:fixed;				
-			left:210px;
-			z-index:310;		
-
-			background:#fafafa;						
-			@include box-shadow(0 0 5px 0 rgba(#000, 0.1) );				
-		}		
 
 		.desc {			
 			margin-left:60px;

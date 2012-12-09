@@ -6,7 +6,7 @@
  */
 ;(function($, window, undefined) {   
     
-    var site = {};    
+    var site = {}, scrollDuration = 0, scrollOptions = { offset: 38};    
 
     
     /**
@@ -27,45 +27,11 @@
                 window.open( $(this).attr("href") );
             }
 
-        });   
-
-        // Smooth scrolling for internal links and only
-        $("a[href^='#']").live("click", function(event) {
-            event.preventDefault();
-            
-            var $this = $(this),
-                target = this.hash,
-                $target = $(target),
-                scrollElement = 'html, body';
-            
-            $(scrollElement).stop().animate({
-                'scrollTop': $target.offset().top
-            }, 500, 'linear', function() {
-                window.location.hash = target;
-            });
-            
-        }); 
+        });
         
     })();
 
 
-
-    
-    
-    /**
-     * Resizes the block to fit the window
-     * 
-     * @function
-     * @public
-     */    
-    $(site.resizeBlocks = function() {
-
-        $("menu,#content").css({
-            minHeight: $(window).height() - $("#content").position().top
-        })
-
-    });
-    
     
     /**
      * Event when we try to filter the list
@@ -104,14 +70,12 @@
 
         });
 
+
         // update the layout of every vignette
         site.el.$works.masonry("reload");
-
         //  ajust the scroll     
-        $('html, body').scrollTop(site.el.$works.offset().top);
-
-
-    }
+        site.el.$menu.find("a[href='#works']").trigger("click");
+    };
 
 
     
@@ -125,15 +89,16 @@
     
         site.el = {
             $content  : $("#content"),
+            $overflow : $("#content > .overflow"),
             $cascade  : $(".cascade"),
             $works    : $("#works"),
             $vignette : $("#works .vignette"),
-            $filters  : $(".filters")
+            $filters  : $(".filters"),
+            $menu     : $("menu:first"),
+            $subMenu  : $("#sub-menu"),
+            $tracker  : $("#tracker")
         };
         
-        // repeats the height after a window resizing 
-        $(window).resize(site.resizeBlocks);
-
         // initializes masonry to define the layout of each vignette
         site.el.$cascade.masonry({
             // options
@@ -142,16 +107,36 @@
             isAnimated: false
         });
 
+        // initializes the Meny menu
+        var meny = Meny.create({
+            menuElement: site.el.$menu[0],
+            contentsElement: site.el.$content[0],
+            position: 'left',
+            width: 211
+        });/**/
+
         // the user wanna filter the list
         site.el.$filters.find("li a").click(site.filterList);
 
-        $("menu h2 a").click(function() {            
+        $("menu h2 a").click(function(event) {   
+
+            event.preventDefault();            
             $("menu h2 a").removeClass("active").filter(this).addClass("active"); 
+
+            var target = $(this).attr("href");
+            // Prevent scroll queing
+            jQuery.scrollTo.window().queue([]).stop();
+            site.el.$overflow._scrollable().stop(true);
+            // Avoid a scroll delay when we scroll to the bottom 
+            site.el.$overflow.scrollTo("100%");
+            //  ajust the scroll                 
+            site.el.$overflow.scrollTo( target, scrollDuration, scrollOptions);
+
         });
 
         // The same for all waypoints
-        site.el.$content.delegate('.screen', 'waypoint.reached', function(event, direction) {         
-
+        site.el.$overflow.delegate('.screen', 'waypoint.reached', function(event, direction) {         
+            
             var $this = $(this);
             // if we are going up, selects the previous screen
             if (direction === "up") {
@@ -159,22 +144,34 @@
                 // check if there is a previous element
                 if( $this.length == 0 ) $this = $(this);
             }
+            var id = $this.attr("id");
                               
             // update the menu  
-            $("menu h2 a").removeClass("active").filter("[href='#" + $this.attr("id") + "']").addClass("active"); 
-            // update the screen
-            site.el.$content.find('.screen').removeClass("active");
-            $this.addClass("active");
+            site.el.$menu.find("h2 a").removeClass("active").filter("[href='#" + id + "']").addClass("active"); 
+            site.el.$subMenu.find("li").removeClass("active").filter("[data-target='" + id +"']").addClass("active"); 
+
+            // update the tracker
+            site.el.$tracker.empty().html( $this.find("h1").html() );
             // update the window url
             if(Modernizr.history) window.history.pushState('home', '', "#" + $this.attr("id") );
         });
-        
+
         // Register each screen as a waypoint.
-        site.el.$content.find('.screen').waypoint({ offset: '0%', continuous: false });
+        site.el.$overflow.find('.screen').waypoint({ 
+            context: site.el.$overflow, 
+            offset: "50%", 
+            continuous: false 
+        }); /**/
 
         // Scroll to the right element
-        if(window.location.hash != "") {       
-            $("html,body").scrollTop( $(window.location.hash).offset().top + 1 );
+        if(window.location.hash != "") {                   
+            // Prevent scroll queing
+            jQuery.scrollTo.window().queue([]).stop();
+            site.el.$overflow._scrollable().stop(true);
+            // Avoid a scroll delay when we scroll to the bottom 
+            site.el.$overflow.scrollTo("100%");
+
+            site.el.$overflow.scrollTo( window.location.hash, 0, scrollOptions);
         }
             
 

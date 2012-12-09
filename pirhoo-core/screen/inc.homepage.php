@@ -9,6 +9,8 @@
      * @author pirhoo <pierre.romera@gmail.com>
      * 
      */             
+    //apc_delete("homepage");
+    apc_delete("homepage");
     $homepage = apc_fetch("homepage");
     // there is a page in the apc cache
     if( $homepage && !$_GET['debug'] == "cache" ) {  
@@ -28,8 +30,10 @@
     // Javscript files :
     $jsFiles = array();
     $jsFiles[] = "/pirhoo-core/javascript/jquery/jquery-last.min.js";    
+    $jsFiles[] = "/pirhoo-core/javascript/jquery/jquery.scrollTo-min.js";    
     $jsFiles[] = "/pirhoo-core/javascript/jquery/jquery.masonry.min.js"; 
     $jsFiles[] = "/pirhoo-core/javascript/jquery/jquery.waypoints.min.js";
+    $jsFiles[] = "/pirhoo-core/javascript/meny.min.js";        
     $jsFiles[] = "/pirhoo-core/javascript/glfx.js";
     $jsFiles[] = "/pirhoo-core/javascript/modernizr.custom.js";
     $jsFiles[] = "/pirhoo-core/javascript/global.js";
@@ -41,7 +45,7 @@
     $homepage->addHeaderFile("javascript", "//connect.facebook.net/en_US/all.js#xfbml=1");
     // and for Google+
     $homepage->addHeaderFile("javascript", "//apis.google.com/js/plusone.js");        
-    
+
     // Stylesheet files : 
     $cssFiles = array();
     $cssFiles[] = "/pirhoo-core/stylesheet/generic.css";
