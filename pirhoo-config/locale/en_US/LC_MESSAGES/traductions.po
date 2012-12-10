@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: pirhoo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-12-09 22:22+0100\n"
-"PO-Revision-Date: 2012-12-10 00:03+0100\n"
-"Last-Translator: pirhoo <hello@pirhoo.com>\n"
+"PO-Revision-Date: 2012-12-10 12:50+0100\n"
+"Last-Translator: Pirhoo <hello@pirhoo.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
@@ -61,7 +61,7 @@ msgstr "CTO and Co-founder of  <a href=\"http://jplusplus.org\" class=\"open-win
 
 #: /home/pirhoo/Lab/Personal/Pirhoo.v2/pirhoo-config/locale/locale.php:22
 msgid "Journalism++ accompagne les rédactions dans leur transition vers le web des données."
-msgstr "Journalism++ build data-first newsrooms."
+msgstr "Journalism++ builds data-first newsrooms."
 
 #: /home/pirhoo/Lab/Personal/Pirhoo.v2/pirhoo-config/locale/locale.php:23
 msgid "Enseignant à l'<a href=\"http://www.journalisme.sciences-po.fr\" target=\"_blank\">École de Journalisme de Science Po</a>"
@@ -69,11 +69,11 @@ msgstr "Teacher at <a href=\"http://www.journalisme.sciences-po.fr\" target=\"_b
 
 #: /home/pirhoo/Lab/Personal/Pirhoo.v2/pirhoo-config/locale/locale.php:24
 msgid "J'initie les journalistes au langage et au développement numérique."
-msgstr "Teaching to journalists programmation languages and technologies."
+msgstr "Teaching journalists programmation languages and technologies."
 
 #: /home/pirhoo/Lab/Personal/Pirhoo.v2/pirhoo-config/locale/locale.php:25
 msgid "Intervenant à l'<a href=\"http://esj-lille.fr/\" class=\"open-window\">ESJ Lille</a> et au <a href=\"http://www.cfpj.com/ecole-de-journalisme/\" class=\"open-window\">CFJ Paris</a>"
-msgstr "Speaker at <a href=\"http://esj-lille.fr/\" class=\"open-window\">ESJ Lille</a> and at <a href=\"http://www.cfpj.com/ecole-de-journalisme/\" class=\"open-window\">CFJ Paris</a>"
+msgstr "Speaker at <a href=\"http://esj-lille.fr/\" class=\"open-window\">ESJ Lille</a> and <a href=\"http://www.cfpj.com/ecole-de-journalisme/\" class=\"open-window\">CFJ Paris</a>"
 
 #: /home/pirhoo/Lab/Personal/Pirhoo.v2/pirhoo-config/locale/locale.php:26
 msgid "J'interviens en école, en entreprise et en conférence pour parler des sujets liés au <a href=\"https://fr.wikipedia.org/wiki/Journalisme_de_donn%C3%A9es\" class=\"open-window\">Journalisme de données</a>."
@@ -93,5 +93,5 @@ msgstr "Chief operating officer at <a href=\"http://owni.fr\" class=\"open-windo
 
 #: /home/pirhoo/Lab/Personal/Pirhoo.v2/pirhoo-config/locale/locale.php:30
 msgid "OWNI est un media en ligne, pionnier français du Data Journalism."
-msgstr "OWNI is an online media, french pionner in Data Driven Journalism"
+msgstr "OWNI is an online media, french pionneer in Data Driven Journalism"
 
